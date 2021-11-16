@@ -1,9 +1,18 @@
 const axios = require('axios');
 exports.handler = function (event, context, callback) {
   //let response = await fetch('https://etherorcs-spy.vercel.app/api/holders');
+  const headers = {
+    'Access-Control-Allow-Origin': '*',
+    'Access-Control-Allow-Headers': 'Content-Type',
+    'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE',
+  };
 
   axios.get('https://etherorcs-spy.vercel.app/api/holders').then((resp) => {
-    callback(null, { statusCode: 200, body: JSON.stringify(resp.data) });
+    callback(null, {
+      statusCode: 200,
+      headers,
+      body: JSON.stringify(resp.data),
+    });
   });
 
   //   axios
