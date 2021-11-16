@@ -7,6 +7,11 @@ exports.handler = function (event, context, callback) {
     'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE',
   };
 
+  let url = 'https://etherorcs-spy.vercel.app/api/holders';
+  if (event.queryStringParameters.wallet) {
+    url += '/' + event.queryStringParameters.wallet;
+  }
+
   axios.get('https://etherorcs-spy.vercel.app/api/holders').then((resp) => {
     callback(null, {
       statusCode: 200,
