@@ -23,7 +23,7 @@ exports.handler = function (event, context, callback) {
     })
     .catch((err) => {
       callback(null, {
-        statusCode: 500,
+        statusCode: 200,
         headers,
         body: JSON.stringify(err),
       });
