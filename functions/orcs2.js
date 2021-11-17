@@ -1,7 +1,6 @@
-const axios = require('axios');
-exports.handler = function (event, context, callback) {
-  callback(null, {
+exports.handler = async function (event, context) {
+  return {
     statusCode: 200,
-    body: JSON.stringify({ test: 'working' }),
-  });
+    body: JSON.stringify({ message: 'Hello World' }),
+  };
 };
