@@ -1,5 +1,6 @@
 const axios = require('axios');
-exports.handler = function (event, context, callback) {
+
+exports.handler = async function (event, context) {
   const headers = {
     'Access-Control-Allow-Origin': '*',
     'Access-Control-Allow-Headers': 'Content-Type',
@@ -12,20 +13,12 @@ exports.handler = function (event, context, callback) {
   }
   console.log(url);
 
-  axios
-    .get(url)
-    .then((resp) => {
-      callback(null, {
-        statusCode: 200,
-        headers,
-        body: JSON.stringify(resp.data),
-      });
-    })
-    .catch((err) => {
-      callback(null, {
-        statusCode: 200,
-        headers,
-        body: JSON.stringify(err),
-      });
-    });
+  let resp = await axios.get(url);
+  let responseData = await resp.data;
+
+  return {
+    statusCode: 200,
+    headers,
+    body: JSON.stringify(responseData),
+  };
 };
