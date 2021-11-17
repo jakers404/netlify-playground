@@ -1,0 +1,8 @@
+{
+  "version": 3,
+  "sources": ["../../../../../../GitHub/netlify-playground/functions/orcsTest.js"],
+  "sourceRoot": "C:/Users/jakob/AppData/Local/Temp/tmp-24920-jUPafnmFaAJh",
+  "sourcesContent": ["exports.handler = async function (event, context) {\n  return {\n    statusCode: 200,\n    body: JSON.stringify({ message: 'Hello World' }),\n  };\n};\n"],
+  "mappings": ";AAAA,QAAQ,UAAU,eAAgB,OAAO,SAAS;AAChD,SAAO;AAAA,IACL,YAAY;AAAA,IACZ,MAAM,KAAK,UAAU,EAAE,SAAS;AAAA;AAAA;",
+  "names": []
+}
