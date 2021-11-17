@@ -10,6 +10,7 @@ exports.handler = function (event, context, callback) {
   if (event.queryStringParameters.wallet) {
     url += '/' + event.queryStringParameters.wallet;
   }
+  console.log(url);
 
   axios
     .get(url)
